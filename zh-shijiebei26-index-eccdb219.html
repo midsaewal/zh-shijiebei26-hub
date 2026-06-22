@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>再次遇见 · 世界杯</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf9f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 2.5rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* ---- subtle hero ---- */
+    .gentle-hero {
+      margin-top: 1.2rem;
+      margin-bottom: 3.8rem;
+      text-align: left;
+    }
+
+    .gentle-hero .prelude {
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      color: #6b6b6b;
+      border-left: 3px solid #d4c9b6;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-style: normal;
+    }
+
+    .gentle-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      color: #1a1a1a;
+    }
+
+    .gentle-hero .tagline {
+      font-size: 1.15rem;
+      color: #4f4f4f;
+      font-weight: 380;
+      margin-top: 0.2rem;
+    }
+
+    /* ---- typography ---- */
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 480;
+      margin: 2.8rem 0 0.8rem 0;
+      color: #1f1f1f;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 440;
+      margin: 1.6rem 0 0.5rem;
+      color: #2a2a2a;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      color: #2b2b2b;
+    }
+
+    a {
+      color: #1f3a4b;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 0.5px;
+      transition: background-color 0.2s ease;
+    }
+
+    a:hover {
+      background-color: #e8e0d4;
+      text-decoration: none;
+    }
+
+    /* ----- 特点列表 (温和卡片感) ----- */
+    .trait-list {
+      list-style: none;
+      margin: 1.8rem 0 1rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .trait-list li {
+      background: #ffffffec;
+      border: 1px solid #e6e0d8;
+      border-radius: 20px;
+      padding: 1.2rem 1.6rem;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      transition: all 0.15s ease;
+    }
+
+    .trait-list li:hover {
+      border-color: #c6b9a7;
+      background: #fffcf8;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .trait-list li strong {
+      font-weight: 520;
+      color: #1d2d39;
+      display: inline-block;
+      margin-right: 0.2rem;
+    }
+
+    .trait-list li span {
+      color: #3e3e3e;
+    }
+
+    /* ---- 场景/提示块 (温和引用) ---- */
+    .gentle-note {
+      background: #f3efe9;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      margin: 2.2rem 0;
+      border-left: 0;
+      font-size: 0.98rem;
+      color: #2b2b2b;
+      letter-spacing: 0.01em;
+    }
+
+    .gentle-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .gentle-note .note-label {
+      display: inline-block;
+      font-weight: 450;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #7a6e5d;
+      margin-bottom: 0.45rem;
+    }
+
+    /* FAQ 摘要 (极简) */
+    .faq-mini {
+      margin: 2.8rem 0 1.2rem;
+      border-top: 1px solid #e3dcd2;
+      padding-top: 1.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .faq-item .q {
+      font-weight: 480;
+      margin-bottom: 0.1rem;
+      color: #1f2c36;
+    }
+
+    .faq-item .a {
+      color: #4f4f4f;
+      font-size: 0.96rem;
+    }
+
+    /* ---- 温和结尾 ---- */
+    .closing {
+      margin-top: 3.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #ddd8cf;
+      font-size: 0.98rem;
+      color: #4b4b4b;
+    }
+
+    .closing a {
+      color: #1f3a4b;
+    }
+
+    /* ---- 响应式细节 ---- */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.8rem 1.2rem;
+      }
+      .gentle-hero h1 {
+        font-size: 1.8rem;
+      }
+      .gentle-hero .tagline {
+        font-size: 1rem;
+      }
+      .trait-list li {
+        padding: 1rem 1.2rem;
+      }
+      .gentle-note {
+        padding: 1.2rem 1.4rem;
+      }
+    }
+
+    @media (min-width: 900px) {
+      body {
+        padding: 3.5rem 2rem;
+      }
+    }
+
+    /* 占位保持极简 */
+    hr {
+      border: 0;
+      height: 1px;
+      background: #e1dad0;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- 开场短句 hero -->
+    <div class="gentle-hero">
+      <div class="prelude">再次翻开 · 同一个名字</div>
+      <h1>世界杯</h1>
+      <div class="tagline">有些页面值得回来，有些故事值得重读。</div>
+    </div>
+
+    <!-- 承接段落：从再次访问与收藏切入 -->
+    <p>
+      你或许在某个深夜点开过它，在小组赛的间隙匆匆浏览，又或者在冠军之夜后默默关掉标签页。后来赛程结束，生活继续，但那个页面还留在书签的某个角落。如今你再次想起，想找一个安静、可靠的地方——不是喧哗的资讯流，而是一个能让你慢慢看、慢慢回忆的角落。
+    </p>
+    <p>
+      于是你回到这里：<a href="https://zh-shijiebei26.com">世界杯</a>。它像一本旧杂志，封面熟悉，内页却总有未曾留意的段落。没有弹窗，没有自动播放的视频，只有赛事记录、球队脉络，以及那些让一届届比赛变得有温度的细节。
+    </p>
+
+    <!-- 特点列表（四个） -->
+    <h2>为什么值得留下</h2>
+    <ul class="trait-list">
+      <li>
+        <strong>· 沉淀后的内容</strong>
+        <span>每届比赛都经过梳理，不是碎片快讯，而是有来龙去脉的记述。你可以从一篇综述读到某场经典对决的战术变化。</span>
+      </li>
+      <li>
+        <strong>· 不带干扰的阅读</strong>
+        <span>没有自动播放、弹窗或动态广告。页面安静，排版留白充足，适合慢慢看，也适合收藏后随时回来。</span>
+      </li>
+      <li>
+        <strong>· 跨度与纵深</strong>
+        <span>从早期的黑白照片到现代的高清图集，从小组赛冷门到决赛的点球细节——覆盖的不仅是冠军，还有那些被忽略的瞬间。</span>
+      </li>
+      <li>
+        <strong>· 持续更新，但不追热点</strong>
+        <span>内容在赛后继续补充，保持冷静的语调。比起抢先发布，更在意准确和完整。这也是为什么值得放进书签栏。</span>
+      </li>
+    </ul>
+
+    <!-- 温和的场景提示 (类似使用场景) -->
+    <div class="gentle-note">
+      <span class="note-label">📎 一个可能的场景</span>
+      <p>
+        周末午后，泡一杯茶，打开收藏夹里这个叫“<a href="https://zh-shijiebei26.com">世界杯</a>”的链接。从1998年的夏天开始，一页一页滑下去。你不必记起所有比分，但某些进球、某些表情会自己浮现。页面没有催促你，它只是停在那边，等你翻到下一段。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要（克制，不夸大） -->
+    <div class="faq-mini">
+      <h3>偶尔会被问起</h3>
+      <div class="faq-item">
+        <div class="q">— 内容会实时更新最新比赛吗？</div>
+        <div class="a">主要聚焦于赛后的沉淀与回顾，并非即时比分直播。但重大赛事结束后会有整理文章，保持节奏而非速度。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">— 是否收费或需要注册？</div>
+        <div class="a">完全免费，无需注册或订阅。没有会员专区，所有页面均可直接浏览。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">— 为什么页面风格这么简洁？</div>
+        <div class="a">为了让阅读本身成为主要体验。足够留白，足够慢。我们认为关于足球的记忆不需要被按钮和横幅打断。</div>
+      </div>
+    </div>
+
+    <!-- 温和结尾 + 再次嵌入链接 -->
+    <div class="closing">
+      <p>
+        如果你也喜欢在安静的时候重温那些夏天的夜晚，不妨把<a href="https://zh-shijiebei26.com">世界杯</a>放进收藏夹。它不会频繁推送，也不会改变自己的语调。等你下次想聊聊关于足球的往事，它还在那里。
+      </p>
+      <p style="margin-top: 1rem; font-style: normal; color: #6b6b6b;">
+        —— 一个可以反复回来的页面。
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
